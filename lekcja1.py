@@ -3,6 +3,7 @@ import random
 
 def main():
     dlugoszWeza=1
+    punkty=0
     xApple=random.randint(0,9)*40+20
     yApple=random.randint(0,9)*40+20
     pygame.init()
@@ -40,6 +41,7 @@ def main():
                     if zmienna1==wspol[0] and zmienna2==wspol[1]:
                         pozycjaWaz=[]
                         dlugoszWeza=1
+                        punkty=0
         #dodawanie nowej pozycji węża
                 pozycjaWaz.append((zmienna1,zmienna2))
                 if dlugoszWeza<len(pozycjaWaz):
@@ -51,6 +53,7 @@ def main():
             yApple=random.randint(0,9)*40+20
             pygame.draw.circle(OknoGry,(255,255,0),(xApple,yApple),20)
             dlugoszWeza+=1
+            punkty+=1
        #zmienna1=zmienna1+20
        #zmienna2=zmienna2+20
        #przejście strona prawa
@@ -65,6 +68,9 @@ def main():
             #przejście góra
         if zmienna2<0:
             zmienna2=400    
+        czcionka=pygame.font.SysFont('comicsans',20)
+        tekst=czcionka.render("Punkty: {0}".format(punkty),1,(255,255,255))
+        OknoGry.blit(tekst,(10,10))
         pygame.display.update()
 
 main() 
