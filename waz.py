@@ -20,3 +20,30 @@ class Snake():
             wspolrzendne[1]),(40,40))
             pygame.draw.rect(OknoGry,(255,192,203)
             ,wazShape)
+    def snakeMove(self,x,y):
+        #sprawdzenie przejścia krawędzi
+        noweWspl=self.checkBorder(x,y)
+        #sprawdzenie czy wąż sam siebie nie zjadł 
+        for wspol in self.pozycje[::]:
+            if noweWspl[0]==wspol[0] and noweWspl[1]==wspol[1]:
+                self.pozycje=[]
+                self.dlugosc=1
+                self.punkty=0
+    #dodanie nowej pozycji weza
+        self.pozycje.append(x,y)
+        if self.dlugosc<len(self.pozycje):
+            del self.pozycje[0]
+    #sprawdzanie krawędzi
+    def checkBorder(self,zmienna1,zmienna2):
+        if zmienna1>400:
+            zmienna1=0
+            #przejście dół
+        if zmienna2>400:
+            zmienna2=0
+        #przejście strona lewa
+        if zmienna1<0:
+            zmienna1=400
+            #przejście góra
+        if zmienna2<0:
+            zmienna2=400  
+        return (zmienna1,zmienna2) 
