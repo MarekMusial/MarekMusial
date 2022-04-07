@@ -1,4 +1,4 @@
-from typing_extensions import Self
+
 
 import pygame
 
@@ -30,7 +30,7 @@ class Snake():
                 self.dlugosc=1
                 self.punkty=0
     #dodanie nowej pozycji weza
-        self.pozycje.append(x,y)
+        self.pozycje.append((noweWspl[0],noweWspl[1]))
         if self.dlugosc<len(self.pozycje):
             del self.pozycje[0]
     #sprawdzanie krawędzi
