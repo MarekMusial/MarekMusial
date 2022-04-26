@@ -7,6 +7,7 @@ class Jablko():
     def __init__(self):
         self.kolor=(255,0,0)
         self.applePostiton=(20,20)
+        self.randomPosition()
     def setPosition(self,x,y):
         self.applePostiton=(x,y)
     def getPostition(self):
