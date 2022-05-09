@@ -55,4 +55,11 @@ class Snake():
             #przejście góra
         if zmienna2<0:
             zmienna2=400  
-        return (zmienna1,zmienna2) 
+        return (zmienna1,zmienna2)
+    def biteMe(self,glowa):
+        for czesciCiala in self.pozycje[::]:
+            if glowa[0] == czesciCiala[0] and glowa[1]==czesciCiala[1]:
+                nowePozycje=self.checkBorder(glowa[0]+80, glowa[1]-80)
+                self.pozycje=[nowePozycje]
+                self.dlugosc=1
+                self.punkty=0
