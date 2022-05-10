@@ -83,4 +83,3 @@ def main():
         OknoGry.blit(tekst2,(10,30))
         pygame.display.update()
 
-main() 
