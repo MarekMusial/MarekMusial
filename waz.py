@@ -1,7 +1,7 @@
 
 
 import pygame
-
+import lekcja1
 
 class Snake():
     #konstruktor klasy
@@ -44,17 +44,17 @@ class Snake():
             del self.pozycje[0]
     #sprawdzanie krawędzi
     def checkBorder(self,zmienna1,zmienna2):
-        if zmienna1>400:
+        if zmienna1>lekcja1.rozdzielcosc:
             zmienna1=0
             #przejście dół
-        if zmienna2>400:
+        if zmienna2>lekcja1.rozdzielcosc:
             zmienna2=0
         #przejście strona lewa
         if zmienna1<0:
-            zmienna1=400
+            zmienna1=lekcja1.rozdzielcosc
             #przejście góra
         if zmienna2<0:
-            zmienna2=400  
+            zmienna2=lekcja1.rozdzielcosc
         return (zmienna1,zmienna2)
     def biteMe(self,glowa):
         for czesciCiala in self.pozycje[::]:
