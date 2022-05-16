@@ -4,6 +4,8 @@ import random
 import waz
 import jablko
 rozdzielcosc=400
+obiektWaz1=waz.Snake()
+obiektWaz2=waz.Snake()
 
 iloscJablek=9
 def main():
@@ -12,10 +14,6 @@ def main():
     for nrApple in range(0,iloscJablek):
         objectApple.append(jablko.Jablko())
 
-    obiektWaz1=waz.Snake()
-    obiektWaz2=waz.Snake()
-    
-    
     pygame.init()
     OknoGry=pygame.display.set_mode((rozdzielcosc,rozdzielcosc),0,32)
     run=True
