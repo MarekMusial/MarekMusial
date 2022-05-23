@@ -1,6 +1,8 @@
 import pygame
 import pygame_menu
 import lekcja1
+def iloscJablek(value,ilosc):
+    lekcja1.iloscJablek=ilosc
 def zmianaRozdzielczosci(nazwaPola,Atrybut):
     lekcja1.rozdzielczosc=Atrybut
 def zmienKolorWaz1(value):
@@ -17,6 +19,7 @@ def main():
     menu.add.selector("Rozmiar Ekranu",[('400x400',400),('600x600',600),('800x800',800)],onchange=zmianaRozdzielczosci)
     menu.add.color_input("Kolor wąż 1", 'rgb',default=(25,25,100),onreturn=zmienKolorWaz1)
     menu.add.color_input("Kolor wąż 2", 'rgb',default=(255,255,255),onreturn=zmienKolorWaz2)
+    menu.add.selector("Ilość jabłek",[("1",1),("3",3),("5",5),("10",10),("20",20)],onchange=iloscJablek)
     menu.mainloop(OknoMenu)
 main()
 
