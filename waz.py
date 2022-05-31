@@ -9,6 +9,7 @@ class Snake():
         self.pozycje=[(120,120)]
         self.kierunek=(0,1)
         self.kolor=(255,0,0)
+        self.kolor1=(0,0,255)
     #ustawienie koloru węża
     def setColor(self,color):
         self.kolor=color

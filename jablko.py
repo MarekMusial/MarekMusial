@@ -14,7 +14,7 @@ class Jablko():
     def getPostition(self):
         return self.applePostiton
     def randomPosition(self):
-        iloscKratek=lekcja1.rozdzielcosc//40-1
+        iloscKratek=lekcja1.rozdzielczosc//40-1
         xApple=random.randint(0,iloscKratek)*40+20
         yApple=random.randint(0,iloscKratek)*40+20
         self.setPosition(xApple,yApple)

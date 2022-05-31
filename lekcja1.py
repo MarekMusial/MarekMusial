@@ -5,8 +5,10 @@ import jablko
 rozdzielczosc=400
 obiektWaz1=waz.Snake()
 obiektWaz2=waz.Snake()
-def zmienaKolorWaz1(color):
+def zmienKolorWaz1(color):
     obiektWaz1.setColor(color)
+def zmienKolorWaz2(color):
+    obiektWaz2.setColor(color)
 iloscJablek=9
 def main():
 #tworzenie jabłek
@@ -60,7 +62,7 @@ def main():
         glowa2=obiektWaz2.pozycje[-1]
         #waż zjada jabłko
         for nrApple in objectApple[::]:
-            positionApple=nrApple.getPosition()
+            positionApple=nrApple.getPostition()
             #zjadanie jablka przez pierwszego węża
             if glowa1[0]==positionApple[0]-20 and glowa1[1]==positionApple[1]-20:
                 obiektWaz1.eating()
