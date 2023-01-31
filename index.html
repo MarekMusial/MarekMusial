@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Znajdź liczbę</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-</script>
+    <title>Koszt paliwa</title>
+    <script src="skrypt.js"></script>
 </head>
 <body>
-    <div class="container">
-        <label for="customRange1" class="form-label">Zakres poszukiwanej liczby</label>
-    <input type="range" class="form-range" id="customRange1">
-    </div>
+    <header>
+        <h1>Obliczanie kosztów paliwa</h1>
+    </header>
+    <main>
+        <h3>Podaj dane dotyczące tankowania</h3>
+        <label for="ilosc">Podaj ilość paliwa</label>
+        <input name="ilosc" id="ilosc" type="number">
+        <br>
+        <label for="rodzaj">Wybierz rodzaj paliwa</label>
+        <select name="rodzaj" id="rodzaj">
+            <option value="benzyna95">Benzyna95</option>
+            <option value="benzyna98">Benzyna98</option>
+            <option value="lpg">LPG</option>
+            <option value="olej">Olej napędowy</option>
+        
+        </select>
+        <button type="submit" onclick="oblicz()">Oblicz koszt</button>
+        <p><output id="wynik"></output></p>
+    </main>
+    <footer>
+        <p>Stronę wykonał Marek</p>
+    </footer>
+
+    
 </body>
 </html>
