@@ -5,6 +5,21 @@ function obliczModulo(){
     }else{
         document.getElementById('wynikModulo').value="Liczba nie jest podzielna przez 3"
     }
+    if(liczba%4==0){
+        document.getElementById('wynikModulo').value="Liczba jest podzielna przez 4"
+    }else{
+        document.getElementById('wynikModulo').value="Liczba nie jest podzielna przez 4"
+    }
+    if(liczba%5==0){
+        document.getElementById('wynikModulo').value="Liczba jest podzielna przez 5"
+    }else{
+        document.getElementById('wynikModulo').value="Liczba nie jest podzielna przez 5"
+    }
+    if(liczba%9==0){
+        document.getElementById('wynikModulo').value="Liczba jest podzielna przez 9"
+    }else{
+        document.getElementById('wynikModulo').value="Liczba nie jest podzielna przez 9"
+    }
 }
 function sumaCyfrLiczby(liczba){
     let sumaCyfr=0;
@@ -20,6 +35,7 @@ function czyPodzielna(){
     if(sumaCyfr==3 || sumaCyfr==6 || sumaCyfr==9){
         wynik="Liczba nie jest podzielna przez 3 - Rekurencja";
     }
+
     return wynik;
 }
 function obliczRekurencja(){
