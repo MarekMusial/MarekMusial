@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koszt paliwa</title>
+    <title>Argument Euklidesa</title>
     <script src="skrypt.js"></script>
 </head>
 <body>
     <header>
-        <h1>Obliczanie kosztów paliwa</h1>
+        <h1>Obliczanie największego wspólnego dzielnika</h1>
     </header>
-    <main>
-        <h3>Podaj dane dotyczące tankowania</h3>
-        <label for="ilosc">Podaj ilość paliwa</label>
-        <input name="ilosc" id="ilosc" type="number">
+    <section>
+        <h2>Algorytm Euklidesa</h2>
+        <label for="liczbaA">Podaj pierwszą liczbe</label>
+        <input type="number" name="liczbaA" id="liczbaA">
         <br>
-        <label for="rodzaj">Wybierz rodzaj paliwa</label>
-        <select name="rodzaj" id="rodzaj">
-            <option value="benzyna95">Benzyna95</option>
-            <option value="benzyna98">Benzyna98</option>
-            <option value="lpg">LPG</option>
-            <option value="olej">Olej napędowy</option>
-        
-        </select>
-        <button type="submit" onclick="oblicz()">Oblicz koszt</button>
-        <p><output id="wynik"></output></p>
-    </main>
+        <label for="liczbaB">Podaj drugą liczbe</label>
+        <input type="number" name="liczbaB" id="liczbaB">
+        <br>
+        <button onclick="oblicz()">Poznaj NWD</button>
+        <br>
+        <output name="wynik" id="wynik"></output>
+    </section>
     <footer>
-        <p>Stronę wykonał Marek</p>
+        Strone wykonał Marek
     </footer>
-
-    
 </body>
 </html>
