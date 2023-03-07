@@ -18,7 +18,7 @@
             $wynik=mysqli_query($connect,$zapytanie);
             while($wiersz=mysqli_fetch_array($wynik)){
                 $przedmiot[]=$wiersz['id'];
-                $idprzedmiot[]=$wiersz['przedmiot'];
+                $idprzedmiot[]=$wiersz['nazwaPrzedmiot'];
                 $idprzedmiot2[]=$wiersz['nauczyciel']."<br>";
             }
             $zapytanie="SELECT * FROM dane";
@@ -32,15 +32,15 @@
             if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $przedmiotID=$_POST["przedmiot"];
                 $ocena=$_POST["ocena"];
-                $imie=$_POST["imie"];
-                $nazwisko=$_POST["nazwisko"];
-                $insert="INSERT INTO oceny VALUES(null, '$imie', '$nazwisko', '$przedmiotID', '$ocena')";
+                $idosoba=$_POST["imie"];
+
+                $insert="INSERT INTO oceny VALUES(null, '$idosoba', '$przedmiotID', '$ocena')";
                 if(mysqli_query($connect, $insert)){
                     echo "Dodano dane do bazy";
                 }else{
                     echo "Bład dodawania do bazy";
                 }
-                
+            
             }
         }else{
             echo "błąd połączenia z bazą";
