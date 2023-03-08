@@ -11,13 +11,15 @@
         $connect=mysqli_connect('localhost', 'root', '', '4ti');
         if($connect){
             echo "połączyliśmy się z bazą<br>";
-            $zapytanie="SELECT * FROM obecnosc";
+            $zapytanie="SELECT * from dane";
             $wynik=mysqli_query($connect,$zapytanie);
             while($wiersz=mysqli_fetch_array($wynik)){
-                $id[]=$wiersz['id'];
-                $data[]=$wiersz['data'];
-                $idosoby[]=$wiersz['id_osoby']
-                $obecny[]=$wiersz['obecny']."<br>";
+                $imie[]=$wiersz['imie'];
+                $nazwisko[]=$wiersz['nazwisko'];
+                $idosoba[]=$wiersz['id'];
+            }
+
+                
         }else{
             echo "błąd połączenia z bazą";
         }
@@ -28,7 +30,37 @@
         <h1>Dodawanie obecności</h1>
     </header>
     <main>
+        <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Imie i nazwisko</th>
+                    <th>Czy jest obecny?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    for($i=0; $i<count($imie);$i++){
+                        echo "$imie[$i] $nazwisko[$i]";
+                        echo "<tr>";
+                        echo "<th>$idosoba[$i]</th>";
+                        echo "<td>$imie[$i] $nazwisko[$i]</td>";
+                        echo "<td><input type='checkbox' name='obecny$idosoba[$i]' id='obecny$idosoba[$i]'></td>";
+                        echo "</tr>";
+                    }
+        
+            ?>
+    </tbody>    
+                </table>
+                <input type="submit" value="Zapisz obecność">
+                </form>
 
+        <?php
+            for($i=0; $i<count($imie);$i++){
+                echo "$imie[$i] $nazwisko[$i]";
+            }
+        ?>
     </main>
     <footer>
         Strone wykonał Marek
