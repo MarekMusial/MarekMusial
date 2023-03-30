@@ -39,10 +39,17 @@
     <footer class="stopka2">
         <h3>Nasi top klienci</h3>
         <ol>
-            <li>#</li>
-            <li>#</li>
-            <li>#</li>
-            <li>#</li>
+            <?php
+                $polaczenie=mysqli_connect('localhost', 'root', '', 'hurtownia');
+                if($polaczenie){
+                    $zapytanie2="SELECT imie, nazwisko, punkty FROM klienci ORDER BY punkty DESC LIMIT 3;";
+                    $wynik2=mysqli_query($polaczenie,$zapytanie2);
+                    while($wiersz2=mysqli_fetch_array($wynik2)){
+                        echo "<li>".$wiersz2['imie']." ".$wiersz2['nazwisko'].", ".$wiersz2['punkty']."pkt. </li>";
+                    }
+                }
+                mysqli_close($polaczenie); 
+            ?>
         </ol>
     </footer>
     <footer class="stopka3">
